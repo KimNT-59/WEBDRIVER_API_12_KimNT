@@ -114,7 +114,7 @@ public class Topic_04_05_Excercise {
 		lastName.sendKeys("Nguyen");
 
 		WebElement emailAddress = driver.findElement(By.id("email_address"));
-		emailAddress.sendKeys("vanhungnb1610@gmail.com");
+		emailAddress.sendKeys("vanhungnb1612@gmail.com");
 
 		WebElement pass = driver.findElement(By.id("password"));
 		pass.sendKeys("123456789");
@@ -122,7 +122,8 @@ public class Topic_04_05_Excercise {
 		WebElement passConfirm = driver.findElement(By.id("confirmation"));
 		passConfirm.sendKeys("123456789");
 
-		WebElement registerButton = driver.findElement(By.xpath("//div[@class='button-set']//button[@type='submit']"));
+		WebElement registerButton = driver
+				.findElement(By.xpath("//*[@id='form-validate']/div[@class='buttons-set']/button"));
 		registerButton.click();
 
 		String successMess = driver.findElement(By.xpath("//li[@class='success-msg']")).getText();
