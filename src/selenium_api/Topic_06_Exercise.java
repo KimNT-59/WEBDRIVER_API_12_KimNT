@@ -10,6 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
 public class Topic_06_Exercise {
+	
     WebDriver driver;
 	By emailTextbox = By.xpath("//input[@id='mail']");
 	By ageRadio = By.xpath("//input[@id='under_18']");
