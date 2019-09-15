@@ -13,7 +13,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
 public class Topic_04_05_Excercise {
-    WebDriver driver;
+	WebDriver driver;
 
 	@BeforeClass
 	public void beforeClass() {
@@ -124,7 +124,7 @@ public class Topic_04_05_Excercise {
 
 		WebElement registerButton = driver.findElement(By.xpath("//div[@class='button-set']//button[@type='submit']"));
 		registerButton.click();
-		
+
 		String successMess = driver.findElement(By.xpath("//li[@class='success-msg']")).getText();
 		Assert.assertEquals(successMess, "Thank you for registering with Main Website Store.");
 		Thread.sleep(5000);
