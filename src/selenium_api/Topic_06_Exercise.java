@@ -113,6 +113,7 @@ public class Topic_06_Exercise {
 	}
 
 	public boolean isElementSelected(By by) {
+		
 		if (driver.findElement(by).isSelected()) {
 			System.out.println("Element with locator [" + by + "]is selected");
 			return true;
