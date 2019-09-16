@@ -85,7 +85,7 @@ public class Topic_02_XPath_Css_Part_1 {
   public void TC_02() {
   }
   
-  //Post-condition
+ 
   @AfterClass
   public void afterClass() {
 	  driver.quit();
