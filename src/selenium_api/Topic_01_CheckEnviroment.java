@@ -1,47 +1,51 @@
 package selenium_api;
-
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import java.util.concurrent.TimeUnit;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
 public class Topic_01_CheckEnviroment {
+    
+	//khi bao bien driver
 	WebDriver driver;
-
+	
 	@BeforeClass
 	public void beforeClass() {
-		driver = new FirefoxDriver();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.manage().window().maximize();
-		driver.get("http://demo.guru99.com/v4/");
+		System.out.println("Pre-condition step 01: Init Firefox browser");
+		driver=new FirefoxDriver();
+		
+		System.out.println("Pre-condition step 02: wait for page loading success");
+		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+		
+		System.out.println("pre-condition step 03: Open iTviec app url");
+		driver.get("https://itviec.com/");
 	}
-
+	
 	@Test
-	public void TC_01_ValidateCurrentUrl() {
-		// Login Page Url matching
-		String loginPageUrl = driver.getCurrentUrl();
-		Assert.assertEquals(loginPageUrl, "http://demo.guru99.com/v4/");
+	public void TC_01_Check_HomePage02() {
+		System.out.println("Run TestCase 001:Get current page url");
+		String homePageUrl=driver.getCurrentUrl();
+		
+		System.out.println("TC_02: Verify expected url matching with actual url");
+		Assert.assertEquals(homePageUrl,"https:itviec.com/");
+		
 	}
-
 	@Test
-	public void TC_02_ValidatePageTitle() {
-		// Login Page title
-		String loginPageTitle = driver.getTitle();
-		Assert.assertEquals(loginPageTitle, "Guru99 Bank Home Page");
+	public void TC_02_Check_Homepage_Title02() {
+		System.out.println("Run TestCase 02_Step01: Get Curent title");
+		String homePageTitle=driver.getTitle();
+		
+		System.out.println("TC02_Step002: Verify expected url matching with actual url");
+		Assert.assertEquals(homePageTitle, "ITviec | Top Jobs for You");
+		
 	}
-
-	@Test
-	public void TC_03_LoginFormDisplayed() {
-		// Login form displayed
-		Assert.assertTrue(driver.findElement(By.xpath("//form[@name='frmLogin']")).isDisplayed());
-	}
-
+	
 	@AfterClass
 	public void afterClass() {
+		System.out.println("Run post-condition: close browser");
 		driver.quit();
 	}
 
