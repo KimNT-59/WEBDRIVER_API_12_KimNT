@@ -13,7 +13,7 @@ import org.testng.annotations.AfterClass;
 public class Topic_02_XPath_Css_Part_1 {
   WebDriver driver;
     
-	//Pre-condition
+	
   @BeforeClass
   public void beforeClass() {
 	  driver = new FirefoxDriver();
