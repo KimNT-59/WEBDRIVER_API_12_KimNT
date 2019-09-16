@@ -11,7 +11,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
 public class Topic_03_WebBrowser_WebElement_APIs {
-  //Khai báo biến
+  
     WebDriver driver;
 	String firstname, lastname, address, city;
 	int price, productSize;
